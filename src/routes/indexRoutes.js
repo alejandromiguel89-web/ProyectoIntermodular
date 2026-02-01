@@ -26,4 +26,34 @@ router.get("/fecha", (req, res) => {
   res.send(`Fecha actual ${Date().toLocaleString()}`);
 });
 
+router.post("/login", (req, res) => {
+  req.body = "Se almacenará el password y el usuario";
+  console.log(req.body);
+  res.json({ mensaje: "Login correcto" });
+});
+
+router.post("/documentos", (req, res) => {
+  req.body = "Se almacenarán documentos";
+  console.log(req.body);
+  res.json("Enlace a documentos");
+});
+
+router.post("/pruebas", (req, res) => {
+  req.body = "Pagina de pruebas";
+  console.log(req.body);
+  res.send("se reserva este post para hacer pruebas");
+});
+
+router.post("/comentarios", (req, res) => {
+  req.body = "Páginas de comentarios";
+  console.log(req.body);
+  res.json({ mensaje: "Aquí iran los comentarios de los clientes" });
+});
+
+router.post("/calendario", (req, res) => {
+  req.body = "Aqui se almacenarán los proximos eventos";
+  console.log(req.body);
+  res.send("Documento con el calendario");
+});
+
 module.exports = router;
